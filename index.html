@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book App</title>
+  <style>
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h1 {
+      color: #444;
+      font-size: 2.5rem;
+      margin: 20px 0;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+    }
+
+    /* Dropdown Styles */
+    select {
+      width: 100%;
+      padding: 12px;
+      font-size: 1rem;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      background: #f9f9f9;
+      color: #555;
+      cursor: pointer;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    select:hover {
+      border-color: #007bff;
+      box-shadow: 0 0 8px rgba(0, 123, 255, 0.3);
+    }
+
+    select:focus {
+      outline: none;
+      border-color: #007bff;
+      box-shadow: 0 0 12px rgba(0, 123, 255, 0.5);
+    }
+
+    /* Chapter Content Styles */
+    .chapter-content {
+      display: none;
+      padding: 20px;
+      border-top: 2px solid #eee;
+      animation: fadeIn 0.5s ease;
+    }
+
+    .chapter-content.active {
+      display: block;
+    }
+
+    .chapter-content h2 {
+      color: #007bff;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .chapter-content p {
+      line-height: 1.6;
+      color: #555;
+    }
+
+    .quote {
+      font-style: italic;
+      color: #777;
+      margin: 15px 0;
+      padding-left: 20px;
+      border-left: 4px solid #007bff;
+    }
+
+    .life-lesson {
+      font-weight: bold;
+      color: #333;
+      background: #f1f8ff;
+      padding: 10px;
+      border-radius: 6px;
+      margin-top: 20px;
+    }
+
+    /* Sticky Social Media Bar */
+    .social-bar {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .social-bar a {
+      background: #fff;
+      color: #333;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .social-bar a:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .social-bar img {
+      width: 24px;
+      height: 24px;
+    }
+
+    /* Footer Styles */
+    footer {
+      width: 100%;
+      background: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+      margin-top: auto;
+    }
+
+    .footer-text {
+      font-size: 0.9rem;
+      color: #ccc;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Book App: The Power of Beginnings</h1>
+  <div class="container">
+    <select id="chapter-select">
+      <option value="0">Select a Chapter</option>
+      <option value="1">Chapter 1: The Power of Beginnings</option>
+      <option value="2">Chapter 2: Embracing Change</option>
+      <option value="3">Chapter 3: The Strength in Vulnerability</option>
+      <option value="4">Chapter 4: Finding Purpose</option>
+      <option value="5">Chapter 5: The Art of Letting Go</option>
+      <option value="6">Chapter 6: The Courage to Dream</option>
+      <option value="7">Chapter 7: The Beauty of Imperfection</option>
+      <option value="8">Chapter 8: The Gift of Gratitude</option>
+      <option value="9">Chapter 9: The Power of Resilience</option>
+      <option value="10">Chapter 10: Living a Legacy</option>
+    </select>
+
+    <!-- Chapter 1 -->
+    <div id="chapter-1" class="chapter-content">
+      <h2>Chapter 1: The Power of Beginnings</h2>
+      <p>Every journey begins with a single step. Think about the first time you learned to ride a bike. You were scared, unsure, and probably fell a few times. But with each attempt, you got better. Life is no different. The hardest part is always the beginning.</p>
+      <p>Take the story of Sarah, a single mother who dreamed of starting her own bakery. She had no experience, no money, and no support. But she started small, baking cookies for her neighbors. Word spread, and soon, she had a thriving business. Sarah’s story reminds us that every big dream starts with a small step.</p>
+      <div class="quote">"The secret of getting ahead is getting started." – Mark Twain</div>
+      <div class="life-lesson">Life Lesson: Don’t wait for the perfect moment. Start where you are, with what you have. Every small step counts.</div>
+    </div>
+
+    <!-- Chapter 2 -->
+    <div id="chapter-2" class="chapter-content">
+      <h2>Chapter 2: Embracing Change</h2>
+      <p>Change is the only constant in life. Yet, many of us resist it, fearing the unknown. This chapter shares the story of Alex, who lost his job unexpectedly. Instead of despairing, he used the opportunity to pursue his passion for photography. Today, he’s a successful travel photographer, living a life he never imagined.</p>
+      <div class="quote">"Change is the end result of all true learning." – Leo Buscaglia</div>
+      <div class="life-lesson">Life Lesson: Change is not the enemy; resistance to change is. Learn to flow with life’s currents.</div>
+    </div>
+
+    <!-- Chapter 3 -->
+    <div id="chapter-3" class="chapter-content">
+      <h2>Chapter 3: The Strength in Vulnerability</h2>
+      <p>Vulnerability is often seen as weakness, but it’s the birthplace of courage and connection. Meet Maria, who struggled with anxiety for years. When she finally opened up to her friends, she found a support system that helped her heal. Her story shows the power of being authentic.</p>
+      <div class="quote">"Vulnerability is the birthplace of innovation, creativity, and change." – Brené Brown</div>
+      <div class="life-lesson">Life Lesson: True strength lies in being honest about your struggles and asking for help when needed.</div>
+    </div>
+
+    <!-- Chapter 4 -->
+    <div id="chapter-4" class="chapter-content">
+      <h2>Chapter 4: Finding Purpose</h2>
+      <p>What is your "why"? This chapter explores the story of John, who felt lost in his corporate job. After volunteering at a homeless shelter, he discovered his passion for helping others. He now runs a nonprofit that provides meals to those in need.</p>
+      <div class="quote">"The purpose of life is not to be happy. It is to be useful, to be honorable, to be compassionate, to have it make some difference that you have lived and lived well." – Ralph Waldo Emerson</div>
+      <div class="life-lesson">Life Lesson: Purpose gives meaning to your life. Discover what sets your soul on fire.</div>
+    </div>
+
+    <!-- Chapter 5 -->
+    <div id="chapter-5" class="chapter-content">
+      <h2>Chapter 5: The Art of Letting Go</h2>
+      <p>Holding onto the past can weigh you down. This chapter tells the story of Emma, who struggled to forgive her father for abandoning her family. When she finally let go of her anger, she found peace and rebuilt her relationship with him.</p>
+      <div class="quote">"Letting go gives us freedom, and freedom is the only condition for happiness." – Thich Nhat Hanh</div>
+      <div class="life-lesson">Life Lesson: Letting go is not giving up; it’s making room for something better.</div>
+    </div>
+
+    <!-- Chapter 6 -->
+    <div id="chapter-6" class="chapter-content">
+      <h2>Chapter 6: The Courage to Dream</h2>
+      <p>Dreams are the seeds of greatness. This chapter shares the story of James, who grew up in poverty but dreamed of becoming a doctor. Despite countless obstacles, he never gave up. Today, he’s a renowned surgeon, saving lives every day.</p>
+      <div class="quote">"The future belongs to those who believe in the beauty of their dreams." – Eleanor Roosevelt</div>
+      <div class="life-lesson">Life Lesson: Dreams are the blueprints of your future. Have the courage to chase them.</div>
+    </div>
+
+    <!-- Chapter 7 -->
+    <div id="chapter-7" class="chapter-content">
+      <h2>Chapter 7: The Beauty of Imperfection</h2>
+      <p>Perfection is an illusion. This chapter celebrates the story of Lisa, who struggled with body image issues. When she learned to love her flaws, she found confidence and inspired others to do the same.</p>
+      <div class="quote">"Imperfection is beauty, madness is genius, and it’s better to be absolutely ridiculous than absolutely boring." – Marilyn Monroe</div>
+      <div class="life-lesson">Life Lesson: Embrace your imperfections; they are what make you human.</div>
+    </div>
+
+    <!-- Chapter 8 -->
+    <div id="chapter-8" class="chapter-content">
+      <h2>Chapter 8: The Gift of Gratitude</h2>
+      <p>Gratitude transforms ordinary moments into blessings. This chapter tells the story of Tom, who survived a near-fatal accident. He now starts every day by listing three things he’s grateful for, no matter how small.</p>
+      <div class="quote">"Gratitude turns what we have into enough." – Anonymous</div>
+      <div class="life-lesson">Life Lesson: Gratitude is the key to contentment. Count your blessings, not your problems.</div>
+    </div>
+
+    <!-- Chapter 9 -->
+    <div id="chapter-9" class="chapter-content">
+      <h2>Chapter 9: The Power of Resilience</h2>
+      <p>Life will knock you down, but resilience will help you rise again. This chapter shares the story of Anna, who battled cancer twice. Her determination and positive attitude helped her overcome the disease and inspire others.</p>
+      <div class="quote">"Fall seven times, stand up eight." – Japanese Proverb</div>
+      <div class="life-lesson">Life Lesson: Resilience is not about avoiding failure; it’s about bouncing back stronger.</div>
+    </div>
+
+    <!-- Chapter 10 -->
+    <div id="chapter-10" class="chapter-content">
+      <h2>Chapter 10: Living a Legacy</h2>
+      <p>What will you leave behind? This chapter tells the story of Mr. Thompson, a teacher who dedicated his life to educating underprivileged children. Even after his passing, his students continue to honor his legacy by paying it forward.</p>
+      <div class="quote">"The best way to predict the future is to create it." – Peter Drucker</div>
+      <div class="life-lesson">Life Lesson: Live a life that inspires others. Your legacy is not what you have, but what you give.</div>
+    </div>
+  </div>
+
+  <!-- Sticky Social Media Bar -->
+  <div class="social-bar">
+    <a href="https://www.instagram.com/gaurabspk/" target="_blank" title="Instagram">
+      <img src="https://img.icons8.com/color/48/000000/instagram-new.png" alt="Instagram">
+      Instagram
+    </a>
+   
+    <a href="https://linkedin.com/in/yourprofile" target="_blank" title="LinkedIn">
+      <img src="https://img.icons8.com/color/48/000000/linkedin.png" alt="LinkedIn">
+      LinkedIn
+    </a>
+    <a href="mailto:gaurabpromo@gmail.com" title="Email Me">
+      <img src="https://img.icons8.com/color/48/000000/gmail.png" alt="Email">
+      Email
+    </a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-text">
+      &copy; 2025 Gaurab Sapkota. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('chapter-select').addEventListener('change', function() {
+      // Hide all chapter contents
+      document.querySelectorAll('.chapter-content').forEach(function(chapter) {
+        chapter.classList.remove('active');
+      });
+
+      // Show the selected chapter content
+      const selectedChapter = document.getElementById(`chapter-${this.value}`);
+      if (selectedChapter) {
+        selectedChapter.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>
